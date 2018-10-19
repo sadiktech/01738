@@ -1,0 +1,17 @@
+#%RAML 1.0
+baseUri: https://mocksvc.mulesoft.com/mocks/e83708d5-e661-4b62-a3b6-2bac07db0c32 # 
+title: 101738
+
+/extractData:
+  get:
+    queryParameters: 
+      maxNumber: string
+    responses:
+      200:
+        body: 
+          application/json:
+            example:
+              {'Name' : 'Sadik Ali' }
+
+
+        
