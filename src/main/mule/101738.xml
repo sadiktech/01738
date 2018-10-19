@@ -124,14 +124,14 @@ output application/json
         </error-handler>
     </flow>
     <flow name="get:\extractData:101738-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd" doc:id="682191f1-aa55-4b6b-96f3-68eb1495df60">
+		<set-variable value="#[output application/json --- {  Name: &quot;Sadik Ali&quot; ++ '---' ++ attributes.queryParams.maxNumber}]" doc:name="Set Variable" doc:id="5303a8d3-dee0-493e-9594-ef1a71d7c699" variableName="ValueName"/>
+		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd" doc:id="682191f1-aa55-4b6b-96f3-68eb1495df60">
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0
 output application/json
 ---
-{
-  Name: "Sadik Ali" ++ '---' ++ attributes.queryParams.maxNumber
-}]]></ee:set-payload>
+vars.ValueName
+]]></ee:set-payload>
             </ee:message>
         </ee:transform>
     </flow>
